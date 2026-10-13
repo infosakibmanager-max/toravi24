@@ -1,0 +1,130 @@
+.page {
+  padding-block: var(--space-8) var(--space-16);
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.breadcrumbs a {
+  color: inherit;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.crumbSep {
+  color: var(--color-rule);
+}
+
+.currentCrumb {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.header {
+  border-bottom: 2px solid var(--color-rule-strong);
+  padding-bottom: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-display);
+  font-weight: 750;
+  color: var(--color-text);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--space-3);
+}
+
+.description {
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  max-width: 44rem;
+  margin: 0;
+}
+
+.featuredBlock {
+  margin-bottom: var(--space-10);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.featuredInner {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.featuredImage {
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.featuredContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.featuredHeadline {
+  font-family: var(--font-serif);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  margin: 0;
+}
+
+.featuredHeadline a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.featuredHeadline a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.featuredSummary {
+  font-size: var(--fs-base);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-body);
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.loadMoreWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-10);
+}
+
+@media (max-width: 900px) {
+  .featuredInner {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

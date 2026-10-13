@@ -1,0 +1,10 @@
+# TORAVI24 robots.txt
+# While running demonstration content, search indexing is prevented.
+# When live verified content is launched and VITE_ALLOW_INDEXING=true,
+# update this file to:
+# User-agent: *
+# Allow: /
+# Sitemap: https://<your-domain>/sitemap.xml
+
+User-agent: *
+Disallow: /

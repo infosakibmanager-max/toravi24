@@ -1,0 +1,44 @@
+.shareBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-block: var(--space-4);
+  padding-block: var(--space-3);
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.shareLabel {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-right: var(--space-2);
+}
+
+.shareBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-rule);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  transition: all var(--dur) var(--ease);
+}
+
+.shareBtn:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+.copiedToast {
+  font-size: var(--fs-xs);
+  color: var(--brand-cyan);
+  font-weight: 600;
+  margin-left: var(--space-2);
+}

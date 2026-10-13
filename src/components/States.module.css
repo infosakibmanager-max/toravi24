@@ -1,0 +1,97 @@
+.loading {
+  width: 100%;
+}
+
+.cards {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.list {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.card {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.bone {
+  background: linear-gradient(90deg, var(--color-bg-muted) 0%, var(--color-bg-subtle) 50%, var(--color-bg-muted) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+.thumb {
+  aspect-ratio: 3 / 2;
+  margin-bottom: var(--space-2);
+}
+
+.short {
+  height: 10px;
+  width: 30%;
+}
+
+.line {
+  height: 14px;
+}
+
+.w70 {
+  width: 70%;
+}
+
+.title {
+  height: 32px;
+}
+
+.hero {
+  aspect-ratio: 16 / 9;
+  margin: var(--space-4) 0;
+}
+
+.articleSkeleton {
+  display: grid;
+  gap: var(--space-3);
+  max-width: var(--reading-width);
+  margin-inline: auto;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.message {
+  padding: var(--space-12) var(--space-4);
+  text-align: center;
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.messageTitle {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.messageBody {
+  color: var(--color-text-muted);
+  max-width: 34rem;
+  margin-inline: auto;
+}
+
+.messageAction {
+  margin-top: var(--space-6);
+}
+
+.error .messageTitle {
+  color: var(--brand-red);
+}

@@ -1,0 +1,340 @@
+/* ==========================================================================
+   Global base styles & shared utilities
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-height) + 16px);
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+ul,
+ol {
+  margin: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Visible, consistent keyboard focus */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+::selection {
+  background: rgba(11, 127, 166, 0.22);
+}
+
+/* ---------- Layout utilities ---------- */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -100px;
+  z-index: 1000;
+  padding: var(--space-3) var(--space-4);
+  background: var(--brand-cyan);
+  color: #fff;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: var(--space-2);
+}
+
+/* ---------- Editorial primitives ---------- */
+
+/* Category kicker shown above headlines */
+.kicker {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+a.kicker:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Headline link: underline on hover/focus only */
+.headline-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.headline-link:hover,
+.headline-link:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+/* Stretched link: makes a whole story block clickable from its headline link */
+.stretched-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.meta {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+}
+
+/* Section heading with heavy top rule — the main editorial divider */
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  border-top: 3px solid var(--color-rule-strong);
+  padding-top: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.section-heading h2 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+.section-heading a {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-link);
+  white-space: nowrap;
+}
+
+.section-heading a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: 0 var(--space-6);
+  border: 1px solid var(--color-rule-strong);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+.btn:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--brand-ink);
+  border-color: var(--brand-ink);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--brand-cyan);
+  border-color: var(--brand-cyan);
+  color: #fff;
+}
+
+:root[data-theme='dark'] .btn-primary {
+  background: var(--brand-cyan-bright);
+  border-color: var(--brand-cyan-bright);
+  color: #071015;
+}
+
+/* Demo badge — makes demonstration content obvious during development */
+.demo-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  border: 1px solid var(--color-demo-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-demo-bg);
+  color: var(--color-demo-text);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+/* Image frame with fixed ratio — prevents layout shift */
+.media {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-muted);
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ratio-16x9 {
+  aspect-ratio: 16 / 9;
+}
+
+.ratio-3x2 {
+  aspect-ratio: 3 / 2;
+}
+
+.ratio-1x1 {
+  aspect-ratio: 1 / 1;
+}
+
+.media-placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--color-text-muted);
+  background:
+    repeating-linear-gradient(135deg, transparent 0 12px, rgba(127, 135, 146, 0.08) 12px 13px),
+    var(--color-bg-muted);
+}
+
+.kicker-row {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.breaking-chip {
+  display: inline-block;
+  padding: 1px 6px;
+  background: var(--brand-red);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  border-radius: 1px;
+}
+
+/* Serif headline scale used by story components */
+.hl {
+  font-family: var(--font-serif);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: var(--lh-snug);
+  color: var(--color-text);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.dek {
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

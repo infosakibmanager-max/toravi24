@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting — TORAVI24</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // MIT License - https://github.com/rafgraph/spa-github-pages
+      var pathSegmentsToKeep = 0; // 0 for custom domain; 1 if hosted at username.github.io/repo-name/
+      var l = window.location;
+      var path = l.pathname.slice(1).split('/');
+      var redirectPath = '/' + path.slice(pathSegmentsToKeep).join('/') + (l.search ? l.search : '') + l.hash;
+      l.replace(
+        l.protocol +
+          '//' +
+          l.hostname +
+          (l.port ? ':' + l.port : '') +
+          (pathSegmentsToKeep > 0 ? '/' + path.slice(0, pathSegmentsToKeep).join('/') : '') +
+          '/?p=' +
+          encodeURIComponent(redirectPath)
+      );
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to TORAVI24…</p>
+  </body>
+</html>

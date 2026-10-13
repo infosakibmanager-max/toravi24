@@ -1,0 +1,123 @@
+.page {
+  padding-block: var(--space-8) var(--space-16);
+}
+
+.header {
+  border-bottom: 2px solid var(--color-rule-strong);
+  padding-bottom: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-display);
+  font-weight: 750;
+  color: var(--color-text);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--space-4);
+}
+
+.form {
+  position: relative;
+  max-width: 680px;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 var(--space-12) 0 var(--space-5);
+  font-size: var(--fs-base);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-rule-strong);
+  border-radius: var(--radius-sm);
+  outline: none;
+}
+
+.input:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+}
+
+.clearBtn {
+  position: absolute;
+  right: var(--space-12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.clearBtn:hover {
+  color: var(--color-text);
+  background: var(--color-bg-subtle);
+}
+
+.submitBtn {
+  position: absolute;
+  right: var(--space-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+
+.submitBtn:hover {
+  color: var(--brand-cyan);
+}
+
+.statusRow {
+  margin-top: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.suggestedWrap {
+  margin-top: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.suggestionTag {
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-rule);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--color-text-secondary);
+}
+
+.suggestionTag:hover {
+  background: var(--color-rule);
+  color: var(--color-text);
+}
+
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.resultItem {
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-rule);
+}
