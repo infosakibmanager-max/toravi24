@@ -15,8 +15,8 @@ export const SITE = {
   description:
     'TORAVI24 is a global digital news channel. We turn primary-source intelligence into clear, useful journalism on world affairs, politics, geopolitics, technology, science, climate, business and security.',
   principle: 'Primary-source intelligence → editorial understanding → useful journalism.',
-  /** Absolute public URL, e.g. https://www.yourdomain.com — used for canonical/OG tags. */
-  url: env.VITE_SITE_URL ? trimSlash(env.VITE_SITE_URL) : '',
+  /** Absolute public URL, e.g. https://toravi24.tech — used for canonical/OG tags. */
+  url: env.VITE_SITE_URL ? trimSlash(env.VITE_SITE_URL) : 'https://toravi24.tech',
   /** Base path the app is served from ("/" for a custom domain). */
   basePath: env.BASE_URL,
   /** Which content provider to use: "demo" (local data) or "api" (future). */
